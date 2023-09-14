@@ -9,9 +9,9 @@ from rest_framework.authtoken.models import Token
 
 class Student(models.Model):
   name = models.CharField(max_length=100)
-  rollNo = models.CharField(max_length=10)
-  phone = models.CharField(max_length=15)
-  email = models.EmailField(max_length=100)
+  rollNo = models.CharField(max_length=10, unique=True)
+  phone = models.CharField(max_length=15, unique=True)
+  email = models.EmailField(max_length=100, unique=True)
 
   created_at = models.DateTimeField(auto_now_add=True)
   updated_at = models.DateTimeField(auto_now=True)
